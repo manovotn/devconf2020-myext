@@ -16,7 +16,7 @@ public class ResourcesTest {
     @Test
     public void testHelloEndpoint() {
         given()
-          .when().get("/hello/Joe")
+          .when().get("/hello?name=Joe")
           .then()
              .statusCode(200)
              .body(containsString("Hello Joe!"));

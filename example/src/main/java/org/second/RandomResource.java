@@ -7,7 +7,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("/random")
-public class SecondResource {
+public class RandomResource {
 
     private static Random random = new Random();
 

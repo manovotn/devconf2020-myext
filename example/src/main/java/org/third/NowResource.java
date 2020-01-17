@@ -8,7 +8,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("date")
-public class ThirdResource {
+public class NowResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)

@@ -24,12 +24,9 @@ public class WatcherInterceptor {
     Object aroundInvoke(InvocationContext context) throws Exception {
         long start = System.currentTimeMillis();
         try {
-            Object ret = context.proceed();
+            return context.proceed();
+        } finally {
             checkLimit(context, start);
-            return ret;
-        } catch (Exception e) {
-            checkLimit(context, start);
-            throw e;
         }
     }
 

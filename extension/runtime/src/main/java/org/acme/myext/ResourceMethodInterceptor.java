@@ -14,10 +14,12 @@ public class ResourceMethodInterceptor {
 
     private static final Logger LOGGER = Logger.getLogger(ResourceMethodInterceptor.class.getName());
 
+    private static final String INTERCEPTED = "Your invocation got intercepted. ";
+
     @AroundInvoke
     Object aroundInvoke(InvocationContext context) throws Exception {
         LOGGER.infof("Intercepting resource method: %s", context.getMethod());
-        return context.proceed();
+        return INTERCEPTED + context.proceed();
     }
 
 }

@@ -13,4 +13,17 @@ public class TestResource {
     public String ping() {
         return "ping";
     }
+
+    @GET
+    @Path("/limit")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String limitExceeded() {
+        try {
+            Thread.sleep(200l);
+        } catch (InterruptedException e) {
+            throw new IllegalStateException(e);
+        }
+        return "ping";
+    }
+
 }

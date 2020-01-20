@@ -17,15 +17,7 @@ public class WatcherConfig {
     public String regularExpression;
 
     /**
-     * Controls the enablement of whole extension. If disabled, no action will be taken.
-     * <p>
-     * By default, false is present.
-     */
-    @ConfigItem(defaultValue = "false")
-    public boolean disable;
-
-    /**
-     * The time limit used by watcher. If a method invocation exceeds the limit a warning message is logged.
+     * The time limit used by watcher. If a method invocation exceeds the limit a CDI even of type {@link LimitExceeded} is fired.
      * <p>
      * By default, the limit is 500ms.
      */

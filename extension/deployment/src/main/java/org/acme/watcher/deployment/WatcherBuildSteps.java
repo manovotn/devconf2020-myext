@@ -53,11 +53,6 @@ public class WatcherBuildSteps {
             BuildProducer<WatchedResourceMethodBuildItem> resourceMethods,
             WatcherConfig config, WatcherRecorder recorder) {
 
-        if (config.disable) {
-            recorder.summarizeBootstrap(NAME + " extension is disabled.");
-            return;
-        }
-
         IndexView index = beanArchive.getIndex();
         Set<MethodInfo> affectedMethods = new HashSet<>();
 

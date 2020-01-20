@@ -32,10 +32,10 @@ import io.quarkus.deployment.builditem.FeatureBuildItem;
 
 public class WatcherBuildSteps {
 
-    private static final String NAME = ":: WATCHER ::";
+    private static final String NAME = ".: WATCHER :.";
 
     private static final DotName GET = DotName.createSimple(GET.class.getName());
-    private static final DotName RESOURCE_INTERCEPTED = DotName.createSimple(Watch.class.getName());
+    private static final DotName WATCH = DotName.createSimple(Watch.class.getName());
 
     @BuildStep
     FeatureBuildItem feature() {
@@ -95,7 +95,7 @@ public class WatcherBuildSteps {
             @Override
             public void transform(TransformationContext context) {
                 if (methods.contains(context.getTarget())) {
-                    context.transform().add(RESOURCE_INTERCEPTED).done();
+                    context.transform().add(WATCH).done();
                 }
             }
         });

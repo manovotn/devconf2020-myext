@@ -26,15 +26,11 @@ public class WatcherInterceptor {
         try {
             return context.proceed();
         } finally {
-            checkLimit(context, start);
-        }
-    }
-
-    private void checkLimit(InvocationContext context, long start) {
-        long time = System.currentTimeMillis() - start;
-        if (time > limit) {
-            event.fire(new LimitExceeded(time,
-                    context.getMethod().getDeclaringClass().getName() + "#" + context.getMethod().getName() + "()"));
+            long time = System.currentTimeMillis() - start;
+            if (time > limit) {
+                event.fire(new LimitExceeded(time,
+                        context.getMethod().getDeclaringClass().getName() + "#" + context.getMethod().getName() + "()"));
+            }
         }
     }
 

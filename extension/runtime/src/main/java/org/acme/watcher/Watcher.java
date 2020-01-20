@@ -30,7 +30,7 @@ public class Watcher {
     void onLimitExceeded(@Observes LimitExceeded event) {
         if (logEnabled) {
             LOGGER.warn(BANNER);
-            LOGGER.warnf("Invocation of [%s] exceeded the limit [%s ms] by [%s ms]",
+            LOGGER.warnf("Invocation of [%s] exceeded the limit [%s] by [%s ms]",
                     event.methodInfo, limit,
                     event.time - limit);
         }

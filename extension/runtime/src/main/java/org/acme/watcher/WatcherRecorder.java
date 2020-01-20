@@ -7,7 +7,7 @@ import io.quarkus.runtime.annotations.Recorder;
 @Recorder
 public class WatcherRecorder {
 
-    private static final Logger LOGGER = Logger.getLogger("org.acme.myext");
+    private static final Logger LOGGER = Logger.getLogger(WatcherRecorder.class);
 
     public void summarizeBootstrap(String text) {
         LOGGER.info(text);
